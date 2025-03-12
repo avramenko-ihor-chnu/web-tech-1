@@ -1,0 +1,5 @@
+#+TITLE: Мої лабораторні роботи
+
+#+begin_src python :results output
+  print('hello world')
+#+end_src
