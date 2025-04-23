@@ -6,22 +6,32 @@
     </head>
 
     <body>
-        <div class="menu-bar">
-            <button id="lab1" onclick="Button1()">Лаболаторна Робота 1</button>
-            <button id="lab2" onclick="Button2()">Лаболаторна Робота 2</button>
-            <button id="lab3" onclick="Button3()">Лаболаторна Робота 3</button>
-            <button id="lab4" onclick="Button4()">Лаболаторна Робота 4</button>
-            <button id="lab5" onclick="Button5()">Лаболаторна Робота 5</button>
-            <button id="lab6" onclick="Button6()">Лаболаторна Робота 6</button>
-            <button id="Extra" onclick="ButtonExtra()" style="width:15%;">Екстра функції</button>
+        <div class="navigation_sidebar">
+            <p style="font-size:30px"><strong>Навігація</strong></p>
+            <button onclick="show_1()">Лаболаторна робота 1</button>
+            <hr>
+            <button onclick="show_2()">Лаболаторна робота 2</button>
+            <hr>
+            <button onclick="show_3()">Лаболаторна робота 3</button>
+            <hr>
+            <button onclick="show_4()">Лаболаторна робота 4</button>
+            <hr>
+            <button onclick="show_5()">Лаболаторна робота 5</button>
+            <hr>
+            <button onclick="show_6()">Лаболаторна робота 6</button>
+            <hr>
+            <button onclick="show_7()">Додаткові завдання</button>
         </div>
 
+        <h1>Web-технології та Web-програмування
+            <small> Авраменко Ігор 201-Б </small></h1>
 
-        <h1>Авраменко Ігор 201-Б. Web-технології та Web-програмування</h1>
-        <div id="LABA1" class="LABS">
+        <div id="Lab_1" class="LABS hidden">
+            <h2>Лаболаторна робота номер 1</h2>
+            <h3 id="subheading1">Завдання номер 1</h3>
             <div class="js-box">
-                <p >Введіть число: &nbsp;<input style="font-size:20px;" type="number" id="InNum"></p>
-                <p><button style="font-size:20px" onclick="showUserInput()">Show user input</button></p>
+                <p >Введіть число: &nbsp;<input type="number" id="InNum"></p>
+                <p><button onclick="showUserInput()">Show user input</button></p>
                 <p>Ви ввели: </p>
                 <div id="resultBox"></div>
                 <p>Дільники числа: </p>
@@ -29,25 +39,111 @@
             </div>
             <script src="./extra/laba1.js"></script>
         </div>
-        <div id="LABA2" class="LABS">
-            <h2>Це 2 лаболаторна</h2>
-        </div>
-        <div id="LABA3" class="LABS">
-            <h2>Це 3 лаболаторна</h2>
-        </div>
-        <div id="LABA4" class="LABS">
-            <h2>Це 4 лаболаторна</h2>
-        </div>
-        <div id="LABA5" class="LABS">
-            <h2>Це 5 лаболаторна</h2>
-        </div>
-        <div id="LABA6" class="LABS">
-            <h2>Це 6 лаболаторна</h2>
-        </div>
-        <div id="EXST" class="LABS">
-            <h2>Додаткові функції</h2>
-        </div>
+        <div id="Lab_2" class="LABS hidden">
+            <h2>Лаболаторна робота номер 2</h2>
+            <h3 id="subheading1">Завдання номер 1</h3>
+            <p>Визначте параметри фільтр.<br>
+            Як зображення ви хочите бачити?</p>
 
+
+            <input type="checkbox" id="nature">
+            <label for= "nature">Природа</label>
+            <input type="checkbox" id="human">
+            <label for= "human">Люди</label>
+            <input type="checkbox" id="animal">
+            <label for= "human">Тварини</label>
+            <br>
+
+
+            <p><button onclick="ApplyPhotoFilters()">ApplyPhotoFilters</button></p>
+
+            <div class="panels">
+                <img src="./extra/laba2_im_1.jpg" class ="Nature Human Animal">
+                <img src="./extra/laba2_im_2.jpg" class ="Nature Animal">
+                <img src="./extra/laba2_im_3.jpg" class ="Nature Human">
+                <img src="./extra/laba2_im_4.jpg" class ="Nature Human">
+                <img src="./extra/laba2_im_5.jpg" class ="Animal">
+            </div>
+
+            <link href="./extra/laba2.css" rel="stylesheet">
+            <script src="./extra/laba2.js"></script>
+
+            <h3 id="subheading2">Завдання номер 2</h3>
+            <h3 id="subheading3">Завдання номер 3</h3>
+            <h3 id="subheading4">Завдання номер 4</h3>
+            <h3 id="subheading5">Завдання номер 5</h3>
+            <h3 id="subheading6">Завдання номер 6</h3>
+        </div>
+        <div id="Lab_3" class="LABS hidden">
+            <h2>Лаболаторна робота номер 3</h2>
+            <h3 id="subheading1">Завдання номер 1</h3>
+            <h3 id="subheading2">Завдання номер 2</h3>
+            <h3 id="subheading3">Завдання номер 3</h3>
+            <h3 id="subheading4">Завдання номер 4</h3>
+            <h3 id="subheading5">Завдання номер 5</h3>
+            <h3 id="subheading6">Завдання номер 6</h3>
+        </div>
+        <div id="Lab_4" class="LABS hidden">
+            <h2>Лаболаторна робота номер 4</h2>
+            <h3 id="subheading1">Завдання номер 1</h3>
+            <h3 id="subheading2">Завдання номер 2</h3>
+            <h3 id="subheading3">Завдання номер 3</h3>
+            <h3 id="subheading4">Завдання номер 4</h3>
+            <h3 id="subheading5">Завдання номер 5</h3>
+            <h3 id="subheading6">Завдання номер 6</h3>
+        </div>
+        <div id="Lab_5" class="LABS hidden">
+            <h2>Лаболаторна робота номер 5</h2>
+            <h3 id="subheading1">Завдання номер 1</h3>
+            <h3 id="subheading2">Завдання номер 2</h3>
+            <h3 id="subheading3">Завдання номер 3</h3>
+            <h3 id="subheading4">Завдання номер 4</h3>
+            <h3 id="subheading5">Завдання номер 5</h3>
+            <h3 id="subheading6">Завдання номер 6</h3>
+        </div>
+        <div id="Lab_6" class="LABS hidden">
+            <h2>Лаболаторна робота номер 6</h2>
+            <h3 id="subheading1">Завдання номер 1</h3>
+            <h3 id="subheading2">Завдання номер 2</h3>
+            <h3 id="subheading3">Завдання номер 3</h3>
+            <h3 id="subheading4">Завдання номер 4</h3>
+            <h3 id="subheading5">Завдання номер 5</h3>
+            <h3 id="subheading6">Завдання номер 6</h3>
+        </div>
+        <div id="Lab_7" class="LABS hidden">
+            <h2>Додаткові завдання</h2>
+            <script src="./extra/extra_ex.js"> </script>
+            <link href="./extra/extra_ex.css" rel="stylesheet">
+            <h3 id="subheading1">Завдання номер 1</h3>
+            <script>getData();let ImportantData; let FilteredData;</script>
+            <button onclick="turnIntoTable(Data_from_backend)">turnIntoTable</button>
+            <button onclick="ImportantData = GetImportant()">GetImportant</button>
+            <button onclick="turnIntoTable(BetterTable())">turnIntoTable(BetterTable())</button>
+            <button onclick="FilteredData = RemoveUnimportant()">RemoveUnimportant</button>
+            <div id="ForDataFilter" style="border:solid;">
+                <p>По яким атрибутами ви вважаєте сформувати таблицю</p>
+                <input type="checkbox" id="ForDataID">
+                <label for= "ForDataID">id</label>
+                <input type="checkbox" id="ForDataName">
+                <label for= "ForDataName">name</label>
+                <input type="checkbox" id="ForDataDescription">
+                <label for= "ForDataDescription">description</label>
+                <input type="checkbox" id="ForDataPrice">
+                <label for= "ForDataPrice">price</label>
+                <input type="checkbox" id="ForDataCategory">
+                <label for= "ForDataCategory">Category</label>
+                <input type="checkbox" id="ForDataSrc">
+                <label for= "ForDataSrc">Src</label>
+                <input type="checkbox" id="ForDataImage">
+                <label for= "ForDataImage">Image</label>
+                <input type="checkbox" id="ForDataImage">
+                <label for= "ForDataImage">Image</label>
+                <input type="checkbox" id="ForDataWhatever">
+                <label for= "ForDataWhatever">Whatever</label>
+                <br>
+            </div>
+            <div id="DataTable", class ="styled-table" ></div>
+        </div>
         <script src="./extra/layout_and_menubar.js"></script>
     </body>
 </html>

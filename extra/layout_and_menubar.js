@@ -1,82 +1,21 @@
-function Button1() {
-    document.querySelectorAll('.menu-bar button').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    document.getElementById('lab1').classList.add('active');
+function show_n(n) {  // Removed `int` (JavaScript doesn't use type declarations)
+    // 1. Hide all LABS elements
+    const LABS = document.getElementsByClassName('LABS'); // Correct method name
+    for (let element of LABS) {
+        element.classList.add('hidden'); // Use `add()` instead of `setAttribute`
+    }
 
-    document.querySelectorAll('.LABS').forEach(div => {
-        div.style.display = 'none';
-    });
-    document.getElementById('LABA1').style.display = 'block';
+    // 2. Show the selected Lab_n
+    const LABA_n = document.getElementById(`Lab_${n}`);
+    if (LABA_n) { // Check if element exists to avoid errors
+        LABA_n.classList.remove('hidden'); // Use `remove()` to ensure it's shown
+    }
 }
 
-function Button2() {
-    document.querySelectorAll('.menu-bar button').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    document.getElementById('lab2').classList.add('active');
-
-    document.querySelectorAll('.LABS').forEach(div => {
-        div.style.display = 'none';
-    });
-    document.getElementById('LABA2').style.display = 'block';
-}
-
-function Button3() {
-    document.querySelectorAll('.menu-bar button').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    document.getElementById('lab3').classList.add('active');
-
-    document.querySelectorAll('.LABS').forEach(div => {
-        div.style.display = 'none';
-    });
-    document.getElementById('LABA3').style.display = 'block';
-}
-
-function Button4() {
-    document.querySelectorAll('.menu-bar button').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    document.getElementById('lab4').classList.add('active');
-
-    document.querySelectorAll('.LABS').forEach(div => {
-        div.style.display = 'none';
-    });
-    document.getElementById('LABA4').style.display = 'block';
-}
-
-function Button5() {
-    document.querySelectorAll('.menu-bar button').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    document.getElementById('lab5').classList.add('active');
-
-    document.querySelectorAll('.LABS').forEach(div => {
-        div.style.display = 'none';
-    });
-    document.getElementById('LABA5').style.display = 'block';
-}
-
-function Button6() {
-    document.querySelectorAll('.menu-bar button').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    document.getElementById('lab6').classList.add('active');
-
-    document.querySelectorAll('.LABS').forEach(div => {
-        div.style.display = 'none';
-    });
-    document.getElementById('LABA6').style.display = 'block';
-}
-function ButtonExtra() {
-    document.querySelectorAll('.menu-bar button').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    document.getElementById('Extra').classList.add('active');
-
-    document.querySelectorAll('.LABS').forEach(div => {
-        div.style.display = 'none';
-    });
-    document.getElementById('EXST').style.display = 'block';
-}
+function show_1(){show_n(1);}
+function show_2(){show_n(2);}
+function show_3(){show_n(3);}
+function show_4(){show_n(4);}
+function show_5(){show_n(5);}
+function show_6(){show_n(6);}
+function show_7(){show_n(7);}
