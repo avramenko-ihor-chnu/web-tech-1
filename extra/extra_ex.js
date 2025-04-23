@@ -15,19 +15,21 @@ async function getData() {
         console.error(error.message);
     }
 }
-
-function turnIntoTable(local_Data){
-    let Data = local_Data;
-    let out = "";
-    for (let i = 0; i < Data.length; i++){
-        out = `${out}<tr>\n`
-        for (key in Data[i]){
-            out = `${out}<th>${Data[i][key]}</th>`
-        }
-        out = `${out}</tr>`
-    }
-
-    document.getElementById("DataTable").innerHTML = "<table>"+out+"</table>";
+function turnIntoTable(local_Data) {
+    const headers = Object.keys(local_Data[0]);
+    let out = "<table><tr>";
+    headers.forEach(header => {
+        out += `<th>${header}</th>`;
+    });
+    out += "</tr>";
+    local_Data.forEach(item => {
+        out += "<tr>";
+        headers.forEach(header => {
+            out += `<td>${item[header]}</td>`;
+        });
+        out += "</tr>";
+    });
+    document.getElementById("DataTable").innerHTML = out + "</table>";
 }
 
 function BetterTable(){
@@ -39,25 +41,19 @@ function BetterTable(){
     userInput["category"] = document.getElementById("ForDataCategory").checked;
     userInput["src"] = document.getElementById("ForDataSrc").checked;
     userInput["image"] = document.getElementById("ForDataImage").checked;
-    userInput["whatever"] = document.getElementById("ForDataWhatever").checked;
     let ListOfFilters;
     console.log(userInput);
     let BetterData = structuredClone(Data_from_backend);
 
     BetterData.forEach(item => {
         for ([key,value] of Object.entries(userInput)){
-            if (value == true && !item.key)
-                item.key = 0;
+            if (value == true && !item[key])
+                item[key] = "No data";
         }
     });
-    // BetterData.forEach(item =>{
-    //     if (!item["description"]){
-    //         item["description"]="No data"
-    //     }
-    // });
-    
+
     BetterData.forEach(item => {
-        for (const [key, value] of Object.entries(userInput)) {
+        for ([key, value] of Object.entries(userInput)) {
             if (value === false) {
                 delete item[key];
             }
